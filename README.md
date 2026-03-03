@@ -24,4 +24,4 @@ pnpm install
 Desenvolvimento
 Para rodar o servidor local com hot-reload:
 pnpm dev
-O projeto estará disponível em http://localhost:3000.
+O projeto estará disponível em http://localhost:3000. 
