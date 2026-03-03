@@ -15,13 +15,13 @@ const DASHBOARD_DATA = {
   unansweredQuestions: 12,
   avgResponseTime: "1.2s",
   dailyInteractions: [
-    { date: "01/10", count: 45 },
-    { date: "02/10", count: 52 },
-    { date: "03/10", count: 38 },
-    { date: "04/10", count: 65 },
-    { date: "05/10", count: 48 },
-    { date: "06/10", count: 70 },
-    { date: "07/10", count: 61 },
+    { date: "01/02", count: 45 },
+    { date: "02/02", count: 52 },
+    { date: "03/02", count: 38 },
+    { date: "04/02", count: 65 },
+    { date: "05/02", count: 48 },
+    { date: "06/02", count: 70 },
+    { date: "07/02", count: 61 },
   ],
   topFAQs: [
     { question: "Resetar senha", count: 145 },
@@ -43,11 +43,11 @@ export default function DashboardPage() {
   if (!mounted) return null;
 
   return (
-    <div className="p-6 md:p-10 space-y-8 bg-background min-h-screen text-foreground">
+    <div className="p-2 md:p-4 space-y-8 bg-background min-h-screen text-foreground">
       {/* Header */}
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Dashboard de Insights</h1>
-        <p className="text-muted-foreground mt-1">Análise baseada no seu tema Shadcn.</p>
+        <p className="text-muted-foreground mt-1">Visão geral das interações com o Agente de IA</p>
       </div>
 
       {/* Cards de Métricas */}
@@ -105,7 +105,7 @@ export default function DashboardPage() {
             <CardDescription>Volume usando cores do tema</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="h-[300px] w-full pt-4">
+            <div className="h-75 w-full pt-4">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={DASHBOARD_DATA.dailyInteractions}>
                   <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="var(--border)" opacity={0.5} />

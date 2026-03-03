@@ -42,7 +42,7 @@ export function AppSidebar() {
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
             <Bot className="h-4 w-4" />
           </div>
-          <span className="font-semibold text-sm">Painel do Totem</span>
+          <span className="font-semibold text-sm">EchoMind</span>
         </div>
       </SidebarHeader>
       <SidebarSeparator />
