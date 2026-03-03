@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
+import { ThemeProvider } from "@/components/theme-provider"; 
+import { ModeToggle } from "@/components/mode-toggle";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,31 +27,37 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br">
+    <html lang="pt-br" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <SidebarProvider>
-          <div className="flex min-h-screen w-full">
-            <AppSidebar />
-            
-            {/* O main precisa de flex-1 para empurrar a sidebar para o lado */}
-            <main className="flex-1 flex flex-col">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <SidebarProvider>
+            <div className="flex min-h-screen w-full">
+              <AppSidebar />
               
-              {/* O HEADER termina aqui. Ele é só a barra do topo */}
-              <header className="h-14 border-b flex items-center px-4 gap-2 bg-sidebar">
-                <SidebarTrigger />
-                <h1 className="text-sm font-medium text-muted-foreground">
-                  Painel Administrativo
-                </h1>
-              </header>
+              <main className="flex-1 flex flex-col">
+                <header className="h-14 border-b flex items-center px-4 justify-between bg-sidebar">
+                  <div className="flex items-center gap-2">
+                    <SidebarTrigger />
+                    <h1 className="text-sm font-medium text-muted-foreground">
+                      Painel Administrativo
+                    </h1>
+                  </div>
 
-              {/* O CONTEÚDO (children) fica FORA do header, em sua própria div */}
-              <div className="flex-1 p-6">
-                {children}
-              </div>
+                  <ModeToggle />
+                </header>
 
-            </main>
-          </div>
-        </SidebarProvider>
+                <div className="flex-1 p-6">
+                  {children}
+                </div>
+              </main>
+            </div>
+          </SidebarProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
