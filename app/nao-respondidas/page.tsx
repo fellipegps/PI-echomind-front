@@ -1,7 +1,7 @@
 export default function NaoRespondidas(){
     return(
         <>
-        NaoRespondidas (WORKING PAE)
+        NaoRespondidas (WORKING PAGE)
         </>
     )
 }
