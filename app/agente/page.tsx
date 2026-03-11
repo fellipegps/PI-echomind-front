@@ -10,7 +10,7 @@ import {
   CardTitle, 
   CardDescription 
 } from "@/components/ui/card";
-// Importando ícones oficiais da Lucide
+
 import { 
   Send, 
   Bot, 
@@ -98,7 +98,7 @@ export default function ChatbotTest() {
         </Button>
       </div>
 
-      <Card className="border-border bg-card pb-0 pt-4 flex flex-col h-[600px] overflow-hidden">
+      <Card className="border-border bg-card pb-0 pt-4 flex flex-col h-150 overflow-hidden">
         <CardHeader className="border-b [.border-b]:pb-4 gap-0">
           <div className="flex items-center gap-3">
             <div className="p-2 rounded-lg bg-primary/10">
@@ -106,7 +106,7 @@ export default function ChatbotTest() {
             </div>
             <div>
               <CardTitle className="text-lg">Chatbot de Teste</CardTitle>
-              <CardDescription>O agente responderá conforme o contexto configurado</CardDescription>
+              <CardDescription>O agente responderá conforme o informações fornecidas</CardDescription>
             </div>
           </div>
         </CardHeader>
@@ -129,7 +129,7 @@ export default function ChatbotTest() {
             {messages.map((msg, i) => (
               <div key={i} className={`flex gap-3 ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
                 {msg.role === "assistant" && (
-                  <div className="flex-shrink-0 h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20">
+                  <div className="shrink-0 h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20">
                     <Bot className="h-4 w-4 text-primary" />
                   </div>
                 )}
@@ -143,7 +143,7 @@ export default function ChatbotTest() {
                 </div>
 
                 {msg.role === "user" && (
-                  <div className="flex-shrink-0 h-8 w-8 rounded-full bg-accent flex items-center justify-center border border-border">
+                  <div className="shrink-0 h-8 w-8 rounded-full bg-accent flex items-center justify-center border border-border">
                     <User className="h-4 w-4 text-accent-foreground" />
                   </div>
                 )}
@@ -152,7 +152,7 @@ export default function ChatbotTest() {
             
             {loading && (
               <div className="flex gap-3 justify-start animate-in fade-in duration-300">
-                <div className="flex-shrink-0 h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20">
+                <div className="shrink-0 h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20">
                   <Bot className="h-4 w-4 text-primary" />
                 </div>
                 <div className="bg-muted border border-border rounded-2xl rounded-tl-none px-4 py-3">

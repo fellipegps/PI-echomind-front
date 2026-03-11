@@ -1,7 +1,7 @@
 export default function Configuracoes(){
     return(
         <>
-        CONFIGURACOES (WORKING PAE)
+        CONFIGURACOES (WORKING PAGE)
         </>
     )
 }
