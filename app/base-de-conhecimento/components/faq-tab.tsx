@@ -16,7 +16,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
 export function FaqTab() {
-  const { faqs, saveFaq, deleteFaq, toggleActive } = useFaqs();
+  const { faqs, saveFaq, deleteFaq, toggleTotemStatus } = useFaqs();
   const [search, setSearch] = useState("");
   const [dialogOpen, setDialogOpen] = useState(false);
   const [editingFaq, setEditingFaq] = useState<Faq | null>(null);
@@ -66,7 +66,8 @@ export function FaqTab() {
               <TableRow>
                 <TableHead>Pergunta</TableHead>
                 <TableHead className="hidden md:table-cell">Resposta</TableHead>
-                <TableHead>Status</TableHead>
+                {/* Definimos uma largura fixa no Header também */}
+                <TableHead className="w-35">Totem</TableHead>
                 <TableHead className="text-right">Ações</TableHead>
               </TableRow>
             </TableHeader>
@@ -80,13 +81,16 @@ export function FaqTab() {
                     {faq.answer}
                   </TableCell>
                   <TableCell>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 w-30"> {/* Largura fixa aqui evita o balanço */}
                       <Switch 
-                        checked={faq.is_active} 
-                        onCheckedChange={() => toggleActive(faq.id)} 
+                        checked={faq.show_on_totem} 
+                        onCheckedChange={() => toggleTotemStatus(faq.id)} 
                       />
-                      <Badge variant={faq.is_active ? "default" : "secondary"}>
-                        {faq.is_active ? "Ativa" : "Inativa"}
+                      <Badge 
+                        variant={faq.show_on_totem ? "default" : "secondary"}
+                        className="w-20 justify-center" // Badge com largura fixa e texto centralizado
+                      >
+                        {faq.show_on_totem ? "No Totem" : "Oculta"}
                       </Badge>
                     </div>
                   </TableCell>

@@ -20,6 +20,7 @@ import {
   MessageSquareDashed, 
 } from "lucide-react";
 import { toast } from "sonner";
+import { PageContainer } from "@/components/page-container";
 
 /**
  * COMO FUNCIONA A SIMULAÇÃO DE CHAT (FAKE CONVERSATION):
@@ -86,7 +87,7 @@ export default function ChatbotTest() {
   };
 
   return (
-    <div className="p-2 md:p-4 space-y-8 bg-background min-h-screen text-foreground">
+    <PageContainer>
       <div className="flex justify-between items-start">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Testar Agente</h1>
@@ -183,6 +184,6 @@ export default function ChatbotTest() {
           </div>
         </CardContent>
       </Card>
-    </div>
+    </PageContainer>
   );
 }
