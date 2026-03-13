@@ -2,7 +2,7 @@ export interface Faq {
   id: string;
   question: string;
   answer: string;
-  is_active: boolean;
+  show_on_totem: boolean;
   created_at: string;
 }
 
