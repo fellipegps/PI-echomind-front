@@ -67,7 +67,7 @@ export function FaqTab() {
                 <TableHead>Pergunta</TableHead>
                 <TableHead className="hidden md:table-cell">Resposta</TableHead>
                 {/* Definimos uma largura fixa no Header também */}
-                <TableHead className="w-[140px]">Totem</TableHead>
+                <TableHead className="w-35">Totem</TableHead>
                 <TableHead className="text-right">Ações</TableHead>
               </TableRow>
             </TableHeader>
@@ -81,7 +81,7 @@ export function FaqTab() {
                     {faq.answer}
                   </TableCell>
                   <TableCell>
-                    <div className="flex items-center gap-2 w-[120px]"> {/* Largura fixa aqui evita o balanço */}
+                    <div className="flex items-center gap-2 w-30"> {/* Largura fixa aqui evita o balanço */}
                       <Switch 
                         checked={faq.show_on_totem} 
                         onCheckedChange={() => toggleTotemStatus(faq.id)} 
