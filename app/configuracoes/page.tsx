@@ -129,7 +129,7 @@ export default function SettingsPage() {
             </div>
           </CardContent>
           <CardFooter className="px-6 py-4 flex justify-start">
-            <Button onClick={handleSave} disabled={saving} className="min-w-[140px]">
+            <Button onClick={handleSave} disabled={saving} className="min-w-35">
               {saving ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : "Salvar Alterações"}
             </Button>
           </CardFooter>
