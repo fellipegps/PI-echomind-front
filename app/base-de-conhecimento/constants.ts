@@ -1,8 +1,8 @@
 import { Faq, CompanyEvent } from "./types";
 
 export const MOCK_FAQS: Faq[] = [
-  { id: "1", question: "Como resetar minha senha?", answer: "Vá em configurações e clique em 'esqueci senha'.", is_active: true, created_at: new Date().toISOString() },
-  { id: "2", question: "Qual o horário de suporte?", answer: "Atendimento de segunda a sexta, das 09h às 18h.", is_active: true, created_at: new Date().toISOString() },
+  { id: "1", question: "Como resetar minha senha?", answer: "Vá em configurações e clique em 'esqueci senha'.", show_on_totem: true, created_at: new Date().toISOString() },
+  { id: "2", question: "Qual o horário de suporte?", answer: "Atendimento de segunda a sexta, das 09h às 18h.", show_on_totem: true, created_at: new Date().toISOString() },
 ];
 
 export const MOCK_EVENTS: CompanyEvent[] = [
