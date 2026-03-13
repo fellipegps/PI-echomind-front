@@ -4,10 +4,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BookOpen, CalendarIcon } from "lucide-react";
 import { FaqTab } from "./components/faq-tab";
 import { EventTab } from "./components/event-tab";
+import { PageContainer } from "@/components/page-container";
 
 export default function KnowledgeBasePage() {
   return (
-    <div className="p-2 md:p-4 space-y-8 bg-background min-h-screen text-foreground">
+    <PageContainer>
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Base de Conhecimento</h1>
         <p className="text-muted-foreground mt-1">
@@ -33,6 +34,6 @@ export default function KnowledgeBasePage() {
           <EventTab />
         </TabsContent>
       </Tabs>
-    </div>
+    </PageContainer>
   );
 }

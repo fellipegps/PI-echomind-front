@@ -107,7 +107,7 @@ export function EventTab() {
                   <TableCell>
                     <Badge variant="outline">{getEventTypeLabel(event.event_type)}</Badge>
                   </TableCell>
-                  <TableCell className="hidden md:table-cell max-w-[200px] truncate text-muted-foreground">
+                  <TableCell className="hidden md:table-cell max-w-50 truncate text-muted-foreground">
                     {event.description || "—"}
                   </TableCell>
                   <TableCell className="text-right">

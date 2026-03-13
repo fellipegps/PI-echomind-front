@@ -9,6 +9,7 @@ import {
 import { 
   Card, CardContent, CardDescription, CardHeader, CardTitle 
 } from "@/components/ui/card";
+import { PageContainer } from "@/components/page-container";
 
 const DASHBOARD_DATA = {
   totalQuestions: 1284,
@@ -43,7 +44,7 @@ export default function DashboardPage() {
   if (!mounted) return null;
 
   return (
-    <div className="p-2 md:p-4 space-y-8 bg-background min-h-screen text-foreground">
+    <PageContainer>
       {/* Header */}
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Dashboard de Insights</h1>
@@ -183,6 +184,6 @@ export default function DashboardPage() {
         </Card>
 
       </div>
-    </div>
+    </PageContainer>
   );
 }
