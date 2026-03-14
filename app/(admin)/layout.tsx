@@ -8,7 +8,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       <div className="flex min-h-screen w-full">
         <AppSidebar />
         <main className="flex-1 flex flex-col">
-          <div className="flex items-center gap-2 p-2 border-b">
+          <div className="sticky top-0 z-10 flex items-center gap-2 p-2 border-b bg-background">
             <SidebarTrigger />
             <div className="ml-auto"><ModeToggle /></div>
           </div>
