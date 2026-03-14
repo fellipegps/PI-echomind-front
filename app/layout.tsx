@@ -36,11 +36,11 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <SidebarProvider>
-            <div className="flex min-h-screen w-full">
+            <div className="flex h-screen w-full overflow-hidden">
               <AppSidebar />
               
-              <main className="flex-1 flex flex-col">
-                <header className="h-14 border-b flex items-center px-4 justify-between bg-sidebar">
+              <main className="flex-1 flex flex-col h-full overflow-hidden">
+                <header className="h-14 border-b flex items-center px-4 justify-between bg-sidebar sticky top-0 z-50 flex-none">
                   <div className="flex items-center gap-2">
                     <SidebarTrigger />
                     <h1 className="text-sm font-medium text-muted-foreground">
@@ -51,7 +51,7 @@ export default function RootLayout({
                   <ModeToggle />
                 </header>
 
-                <div className="flex-1 p-6">
+                <div className="flex-1 p-6 overflow-y-auto">
                   {children}
                 </div>
               </main>
